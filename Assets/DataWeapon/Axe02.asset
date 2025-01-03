@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa3409eec4b3a8b42b7d4b7466497575, type: 3}
+  m_Name: Axe02
+  m_EditorClassIdentifier: 
+  ID: 2
+  image: {fileID: 1849620443, guid: 189b3fcbef091a54faea24620a1797c9, type: 3}
+  materials:
+  - {fileID: 4874126678125670354, guid: 3385aaa67598556458a15bc61bf36c23, type: 3}
+  - {fileID: -3846018093981099296, guid: b4baaaa2c9c65eb42a8f9ea5fe99ae31, type: 3}
+  isLock: 1

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d99cce4324284f469113c9f9ca0395e, type: 3}
+  m_Name: Pant06
+  m_EditorClassIdentifier: 
+  ID: 5
+  Image: {fileID: 21300000, guid: 9426c89263396ea48911c88df3473d33, type: 3}
+  price: 100
+  wasBought: 0
+  materials:
+  - {fileID: 2100000, guid: d74e30662c8fa1840b171e7422b95407, type: 2}

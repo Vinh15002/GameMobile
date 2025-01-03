@@ -12,7 +12,7 @@ public class EnemyHealth : ObjectHealth
 
 
     private void FixedUpdate() {
-        if(currentHeal <= 0){
+        if(IsDead()){
             StartCoroutine(DestroyObject());
             
         }
@@ -21,7 +21,8 @@ public class EnemyHealth : ObjectHealth
     private IEnumerator DestroyObject()
     {
         deadEvent?.Invoke();
-        yield return new WaitForSeconds(0.5f);
-        Destroy(gameObject);
+        SetDeadAnimation();
+        yield return new WaitForSeconds(1f);
+        gameObject.SetActive(false);
     }
 } 

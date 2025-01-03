@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5433c575568170f4ba7ea17960a5133a, type: 3}
+  m_Name: BattleFullSkin
+  m_EditorClassIdentifier: 
+  ID: 0
+  Name: BattleAxe
+  prefab: {fileID: 2693816669043505715, guid: f7d24e399809aa04883a0b3da0b95d30, type: 3}
+  skins:
+  - {fileID: 11400000, guid: e545bf6bac44b914b941f73fbb80263f, type: 2}
+  - {fileID: 11400000, guid: c3265601c8cae0f428147a0524aa4155, type: 2}
+  - {fileID: 11400000, guid: 8c72ea104e1ab2e4ca69ab62fbd30351, type: 2}
+  - {fileID: 11400000, guid: d7592bafb6a3fdc4485f2067bed2c651, type: 2}
+  currentskin: 0
+  gold: 150
+  wasBought: 0

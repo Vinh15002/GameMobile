@@ -5,22 +5,29 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
-    private GameObject targetEnemy;
 
 
-    private void OnEnable() {
-        FindEnemyEvent.targetEnemy += setDisplayUI;
-    }
+    public static Target Instance;
 
-    private void OnDisable() {
-        FindEnemyEvent.targetEnemy -= setDisplayUI;
-    }
 
-    private void setDisplayUI(GameObject enemy)
+    [SerializeField] private GameObject targetUI;
+
+    private void Awake()
     {
-        targetEnemy = enemy;
+        Instance = this;
     }
-    private void FixedUpdate() {
+
+    public bool hasTarget = false;
+
+
+
+
+    public GameObject targetEnemy;
+
+
+   
+
+    private void Update() {
 
         setDisplayTarget();
         
@@ -28,24 +35,42 @@ public class Target : MonoBehaviour
 
     private void setDisplayTarget()
     {
-        if(targetEnemy!= null){
-          
-            
+
+        if (hasTarget)
+        {
             Vector3 positionEnemy = targetEnemy.transform.position;
             positionEnemy.y = 0.5f;
-            transform.position = positionEnemy;
-            FindEnemyEvent.findEnemy?.Invoke(positionEnemy);
-         
-           
+            targetUI.transform.position = positionEnemy;
+            FindEnemyEvent.findEnemy?.Invoke(targetUI.transform.position);
         }
-        else {
-            gameObject.SetActive(false);
+        else
+        {
+            targetUI.SetActive(false);
         }
 
-        
-       
+        if (targetEnemy != null && !targetEnemy.activeSelf) {
+            targetUI.SetActive(false);
+            targetEnemy = null;
+            hasTarget = false;
+        }
 
-        
-       
+
+
+
+
+
+    }
+
+    public void HasEnemy(GameObject target)
+    {
+        hasTarget = true;
+        targetEnemy = target;
+        targetUI.SetActive(true);
+    }
+
+    public void SetDisActive()
+    {
+        hasTarget = false;
+        targetUI.SetActive(false);
     }
 }

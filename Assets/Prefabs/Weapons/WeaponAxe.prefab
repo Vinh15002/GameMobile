@@ -66,8 +66,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -3846018093981099296, guid: 6249d14797c6b0c46b27bb777f8425d2, type: 3}
-  - {fileID: 4874126678125670354, guid: 3385aaa67598556458a15bc61bf36c23, type: 3}
+  - {fileID: 2100000, guid: 1b9d50f504da5cc49b2279813915e0c6, type: 2}
+  - {fileID: 2100000, guid: e9ac1a541b6dc4842918c3b00f6bdfeb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -123,10 +123,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56aad6a53722ee343b0e25cb8d5f3c25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedMovement: 5
-  IDOnwer: 0
+  speedMovement: 6
+  onwer: {fileID: 0}
   direction: {x: 0, y: 0, z: 0}
-  distanceToDestroy: 3
+  distanceToDestroy: 100
   damage: 1
 --- !u!54 &730027148704422648
 Rigidbody:

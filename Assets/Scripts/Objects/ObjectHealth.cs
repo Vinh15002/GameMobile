@@ -1,6 +1,8 @@
 
 
+using Assets.Scripts.Animation;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectHealth : MonoBehaviour, InterfaceHealth
 {
@@ -11,6 +13,9 @@ public class ObjectHealth : MonoBehaviour, InterfaceHealth
     protected int maxHeal = 1;
 
 
+    public UnityEvent resetEvent;
+
+
    
     public bool IsDead(){
         return currentHeal <= 0;
@@ -19,9 +24,25 @@ public class ObjectHealth : MonoBehaviour, InterfaceHealth
     public void TakeDamge(int damage, GameObject destroyer)
     {
         currentHeal -= damage;
+        if(destroyer!= null)
+        {
+            int level = GetComponent<Object>().level;
+            destroyer.GetComponent<Object>().AddLevel(level);
+        }
        
-        int level = GetComponent<Object>().level;
-        destroyer.GetComponent<Object>().AddLevel(level);
         
+    }
+
+
+    public void SetDeadAnimation()
+    {
+        GetComponent<Animator>().SetBool(AnimationString.IsDead, true);
+    }
+
+    public void ResetHeal()
+    {
+        currentHeal = maxHeal;
+        GetComponent<Animator>().SetBool(AnimationString.IsDead, false);
+        resetEvent?.Invoke();
     }
 }

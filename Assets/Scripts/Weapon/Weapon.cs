@@ -14,7 +14,6 @@ namespace Assets.Scripts.Weapon
 
         public GameObject onwer;
         private const float ANGLE = 15f;
-        private Vector3 currentRotate;
         public Vector3 direction = Vector3.zero;
         private Vector3 positonStart;
 
@@ -26,11 +25,9 @@ namespace Assets.Scripts.Weapon
         }
 
 
-        private void Start()
+        private void OnEnable()
         {
-            positonStart= transform.position;
-            currentRotate = transform.rotation.eulerAngles;
-            
+            positonStart = transform.position;
         }
 
     
@@ -39,8 +36,9 @@ namespace Assets.Scripts.Weapon
         {
             handleRoration();
             handleMovement();
-            if(IsDestroy){
-                Destroy(gameObject);
+            if (IsDestroy)
+            {
+                gameObject.SetActive(false);
             }
         }
 
@@ -52,11 +50,12 @@ namespace Assets.Scripts.Weapon
 
         private void handleRoration()
         {
-            currentRotate.z += ANGLE;
+            transform.Rotate(new Vector3(0, 0, ANGLE));
+            //currentRotate.z += ANGLE;
           
 
-            Quaternion directionRotation = Quaternion.Euler(currentRotate);
-            transform.rotation = directionRotation;
+            //Quaternion directionRotation = Quaternion.Euler(currentRotate);
+            //transform.rotation = directionRotation;
         }
 
         

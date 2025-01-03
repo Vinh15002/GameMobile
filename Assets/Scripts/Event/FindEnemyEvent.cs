@@ -10,8 +10,6 @@ namespace Assets.Scripts.Event
     public static  class FindEnemyEvent
     {
 
-        public delegate void TargetEnemy(GameObject enemy);
-        public static TargetEnemy targetEnemy;
 
 
         public delegate void FindEnemy(Vector3 position);

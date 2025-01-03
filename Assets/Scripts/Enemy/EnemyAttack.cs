@@ -9,7 +9,7 @@ public class EnemyAttack : ObjectAttack
     public void Attack(Vector3 position)
     {
         GetComponent<EnemyMovement>().movementDirection = Vector3.zero;
-        HandleAttack(position, GetComponent<Enemy>().ID);
+        HandleAttack(position);
         
     }
 }

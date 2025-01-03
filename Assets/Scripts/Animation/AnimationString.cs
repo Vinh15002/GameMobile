@@ -13,5 +13,6 @@ namespace Assets.Scripts.Animation
         public static string IsDead = "IsDead";
         public static string IsDance = "IsDance";
         public static string IsWin = "IsWin";
+        
     }
 }

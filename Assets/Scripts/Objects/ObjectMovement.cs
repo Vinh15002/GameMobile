@@ -14,7 +14,7 @@ public class ObjectMovement: MonoBehaviour{
         get { return movementDirection.magnitude > 0; }
     }
 
-    private void Start() {
+    private void OnEnable() {
         animator = GetComponent<Animator>();
     }
 

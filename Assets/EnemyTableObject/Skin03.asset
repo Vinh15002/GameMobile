@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fef2b2abd1257d4db1d05868fe15aa9, type: 3}
+  m_Name: Skin03
+  m_EditorClassIdentifier: 
+  bodyMaterial: {fileID: 2100000, guid: 8265894acb8172e4c9df625b1afd761d, type: 2}
+  pansMaterial: {fileID: 2100000, guid: 9d5bd49e2e3c4744795a36431444e531, type: 2}
+  weapon: {fileID: 2751087379627674043, guid: a452048cfd5cfb14682aa9cad5cbc890, type: 3}
+  level: 1
+  typeWeapon: 2
+  mainCoLor: {r: 0.16099632, g: 1, b: 0, a: 1}
+  name: YASUA

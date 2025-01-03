@@ -24,7 +24,7 @@ public class PlayerAttack : ObjectAttack
 
     private void FoundEnemy(Vector3 positon)
     {
-        HandleAttack(positon, 0);
+        HandleAttack(positon);
     }
 
     

@@ -7,32 +7,24 @@ namespace Assets.Scripts.Player
     public class PlayerFindEnemy : ObjectFindEnemy
     {
 
-        [SerializeField] private GameObject targetEnemy;
-        private Vector3 positionEnemy;
-
-        public bool checkHasEnemy = false; 
 
 
 
 
         private void OnTriggerStay(Collider other)
         {
-            if (other.CompareTag("Enemy") && !targetEnemy.activeSelf)
+            if (other.CompareTag("Enemy") && !Target.Instance.hasTarget)
             {
-                targetEnemy.SetActive(true);
-                positionEnemy = other.transform.position;
-                FindEnemyEvent.targetEnemy?.Invoke(other.gameObject);
-                checkHasEnemy = true;
+                Target.Instance.HasEnemy(other.gameObject);
             }
-
-           
         }
 
+
         private void OnTriggerExit(Collider other) {
-            if (other.CompareTag("Enemy"))
+            if (other.CompareTag("Enemy") && other.gameObject.Equals(Target.Instance.targetEnemy))
             {
-                checkHasEnemy = false;
-                targetEnemy.SetActive(false);
+
+                Target.Instance.SetDisActive();
             }
             if(other.CompareTag("Decorator")){
                 other.GetComponent<ConvertState>().SetOut();
@@ -43,6 +35,7 @@ namespace Assets.Scripts.Player
             if(other.CompareTag("Decorator")){
                 other.GetComponent<ConvertState>().SetIn();
             }
+           
         }
 
     }

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5433c575568170f4ba7ea17960a5133a, type: 3}
+  m_Name: AxeFullSkin
+  m_EditorClassIdentifier: 
+  ID: 0
+  Name: Axe
+  prefab: {fileID: 133480430996683080, guid: 1ef0582bcbba4f0408cb2aa4ace96ffc, type: 3}
+  skins:
+  - {fileID: 11400000, guid: a205ff118a80ef04a84f894da987cd3c, type: 2}
+  - {fileID: 11400000, guid: 1025ec17797f96f46aba3297ab861a80, type: 2}
+  - {fileID: 11400000, guid: 24e982f2dd891374a9de4f72604a29c7, type: 2}
+  - {fileID: 11400000, guid: 70c62fb2b1dbffb43b32a7c785482868, type: 2}
+  - {fileID: 11400000, guid: 7d9ba8c0677504f47bbe66409c0f9abd, type: 2}
+  currentskin: 0
+  gold: 100
+  wasBought: 1

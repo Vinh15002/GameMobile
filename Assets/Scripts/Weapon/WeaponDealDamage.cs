@@ -11,10 +11,14 @@ public class WeaponDealDamage : Weapon
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Enemy") && !other.gameObject.Equals(onwer)){
             other.GetComponent<InterfaceHealth>().TakeDamge(damage,onwer);
+            gameObject.SetActive(false);
+
         }
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !other.gameObject.Equals(onwer))
         {
             other.GetComponent<InterfaceHealth>().TakeDamge(damage, onwer);
+            gameObject.SetActive(false);
+
         }
 
     }

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5433c575568170f4ba7ea17960a5133a, type: 3}
+  m_Name: HammerFullSkin
+  m_EditorClassIdentifier: 
+  ID: 2
+  Name: Hammer
+  prefab: {fileID: 2751087379627674043, guid: a452048cfd5cfb14682aa9cad5cbc890, type: 3}
+  skins:
+  - {fileID: 11400000, guid: dab53222f393f4a43b62919ea1929681, type: 2}
+  - {fileID: 11400000, guid: f9ddfde07684e324ba6fbd5b51c60e07, type: 2}
+  - {fileID: 11400000, guid: 1a62c7ee3e9eb7844a51d63457c89f10, type: 2}
+  - {fileID: 11400000, guid: 99b8ca18a713fcb4fae50da7e90d3b2d, type: 2}
+  currentskin: 0
+  gold: 200
+  wasBought: 1
