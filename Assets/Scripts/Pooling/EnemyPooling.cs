@@ -11,7 +11,7 @@ namespace Assets.Scripts.Pooling
 
         public static EnemyPooling Instance;
 
-        public List<ObjectData> listData;
+        public List<ObjectDataSO> listData;
 
         private void Awake()
         {
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Pooling
 
 
 
-        public ObjectData GetRandomObjectData()
+        public ObjectDataSO GetRandomObjectData()
         {
             int random = Random.Range(0, listData.Count);
             return listData[random];

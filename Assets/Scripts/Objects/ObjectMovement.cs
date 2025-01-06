@@ -8,7 +8,7 @@ public class ObjectMovement: MonoBehaviour{
     [SerializeField] protected float speedRotation;
 
     protected Animator animator;
-    public Vector3 movementDirection;
+    [HideInInspector]public Vector3 movementDirection;
     public bool IsMoving
     {
         get { return movementDirection.magnitude > 0; }

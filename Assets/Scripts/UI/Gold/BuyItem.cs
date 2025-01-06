@@ -6,17 +6,15 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI.Gold
 {
-    public class BuyItem : MonoBehaviour
+    public class BuyItem : Buy
     {
         public static BuyItem Instance;
 
 
 
-        [SerializeField] private Button buttonBuyGold;
-        [SerializeField] private TMP_Text goldDisplay;
 
-        public int goldToBuy;
 
+       
         public void OnEnable()
         {
             Instance = this;
@@ -36,10 +34,6 @@ namespace Assets.Scripts.UI.Gold
             });
         }
 
-        public void setGold(int gold)
-        {
-            goldToBuy = gold;
-            goldDisplay.text = goldToBuy.ToString();
-        }
+        
     }
 }

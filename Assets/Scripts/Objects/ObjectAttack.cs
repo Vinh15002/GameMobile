@@ -76,7 +76,7 @@ public class ObjectAttack: MonoBehaviour{
                 GetComponent<Object>().data.typeWeapon
                 );
 
-           
+            game.GetComponent<MeshRenderer>().materials = GetComponent<Object>().data.materials;
             game.transform.rotation = Quaternion.Euler(90, 0, 0);
             game.transform.position = offset.position;
             game.transform.localScale = scale*39;

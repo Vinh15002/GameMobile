@@ -37,6 +37,15 @@ namespace Assets.Scripts.Pooling
             return objectSpawn;
         }
 
+        public void SetDisActiveObject()
+        {
+            foreach (GameObject obj in listObject)
+            {
+                obj.SetActive(false);
+            }
+        }
+
+
 
         public int getAmountObject()
         {

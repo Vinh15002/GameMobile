@@ -11,7 +11,7 @@ using UnityEngine.UIElements;
 
 public class PlayerAttack : ObjectAttack
 {
-    private void Start()
+    private void OnEnable()
     {
         animator = GetComponent<Animator>();
         FindEnemyEvent.findEnemy += FoundEnemy;
@@ -25,6 +25,7 @@ public class PlayerAttack : ObjectAttack
     private void FoundEnemy(Vector3 positon)
     {
         HandleAttack(positon);
+        Debug.Log("????");
     }
 
     

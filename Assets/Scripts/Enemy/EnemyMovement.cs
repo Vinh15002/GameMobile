@@ -56,7 +56,7 @@ public class EnemyMovement : ObjectMovement
 
     private void Movement()
     {
-         if(IsMoving)
+         if(IsMoving && speedMovement > 0)
         {
             movementDirection.Normalize();
             animator.SetBool(AnimationString.IsIdle, false);

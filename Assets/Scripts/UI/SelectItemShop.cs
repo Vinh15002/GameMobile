@@ -6,8 +6,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
-using UnityEditorInternal.VersionControl;
 using UnityEngine;
 
 public class SelectItemShop : MonoBehaviour
@@ -25,9 +23,11 @@ public class SelectItemShop : MonoBehaviour
     [SerializeField] private GameObject buttonBuy;
 
     [SerializeField] private GameObject buttonSelect;
+    [SerializeField] private GameObject shop;
+    [SerializeField] private GameObject buttonShop;
 
 
-    [SerializeField] private GameObject Player;
+    
    
 
 
@@ -136,8 +136,6 @@ public class SelectItemShop : MonoBehaviour
     public void SetButtonSelect()
     {
         
-     
-
         if(currentItemEquipped != currentItem)
         {
             buttonSelect.GetComponent<SelectButton>().SetSelect();
@@ -151,7 +149,15 @@ public class SelectItemShop : MonoBehaviour
     public void SetItemEquipped()
     {
         currentItemEquipped = currentItem;
-       
+        GameObject game = listItem[currentItemEquipped];
+        Player.instance.SetDataWeapon(game.GetComponent<MeshFilter>().sharedMesh, game.GetComponent<MeshRenderer>().sharedMaterials, currentItemEquipped);
+        SetdisActive();
+    }
+
+    public void SetdisActive()
+    {
+        shop.SetActive(false);
+        buttonShop.SetActive(true);
     }
 
  

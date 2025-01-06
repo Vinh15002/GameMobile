@@ -20,6 +20,8 @@ namespace Assets.Scripts.UI.Gold
         public void Start()
         {
             Instance = this;
+            totalGold = PlayerPrefs.GetInt("Gold", 1000);
+            text.text = totalGold.ToString();
         }
 
 
@@ -30,6 +32,8 @@ namespace Assets.Scripts.UI.Gold
         {
             totalGold -= amount;
             text.text = totalGold.ToString();
+            PlayerPrefs.SetInt("Gold", totalGold);
+            PlayerPrefs.Save();
         }
        
     }

@@ -12,7 +12,7 @@ public class Target : MonoBehaviour
 
     [SerializeField] private GameObject targetUI;
 
-    private void Awake()
+    private void OnEnable()
     {
         Instance = this;
     }

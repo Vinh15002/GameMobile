@@ -14,6 +14,14 @@ public  class DataSkin : ScriptableObject
 
     public bool wasBought;
 
+
+
+    public void BuyItem()
+    {
+        wasBought = true;
+    }
+
+   
    
 
 }

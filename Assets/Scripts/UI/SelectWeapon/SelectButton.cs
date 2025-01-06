@@ -39,6 +39,8 @@ namespace Assets.Scripts.UI.SelectWeapon
         public void setEventSelect()
         {
             SelectItemShop.Instance.SetItemEquipped();
+           
+           
 
         }
 

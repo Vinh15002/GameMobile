@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System.Collections;
+
 using UnityEngine;
 
 namespace Assets.Scripts.Health
@@ -13,8 +11,17 @@ namespace Assets.Scripts.Health
         {
             if (IsDead())
             {
-                Destroy(gameObject);
+                StartCoroutine(DestroyObject());
             }
+        }
+
+        private IEnumerator DestroyObject()
+        {
+            SetDeadAnimation();
+            yield return new WaitForSeconds(1f);
+            ManageGame.Instance.SetEndGame();
+            gameObject.SetActive(false);
+
         }
 
     }

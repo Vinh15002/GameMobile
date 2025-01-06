@@ -1,6 +1,7 @@
 
 using Assets.Scripts.Event;
 using Assets.Scripts.Objects;
+using Assets.Scripts.Ultils;
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,7 +11,7 @@ using UnityEngine.Events;
 public abstract class Object: MonoBehaviour{
   
 
-    public ObjectData data;
+    public ObjectDataSO data;
 
 
 
@@ -24,11 +25,14 @@ public abstract class Object: MonoBehaviour{
     [HideInInspector]public int level;
 
     public UnityEvent<int> ActionLevelUp;
-    [SerializeField] private GameObject bodySkin;
+    [SerializeField] protected GameObject bodySkin;
     [SerializeField] protected GameObject panSkin;
-    [SerializeField] private GameObject weaponSkin;
+    [SerializeField] protected GameObject weaponSkin;
+    [SerializeField] protected GameObject playerHat;
+    [SerializeField] protected GameObject playerShiled;
+    [SerializeField] protected GameObject playerBack;
 
-    
+
 
     public UnityEvent<string, Color> SetupUI;
 
@@ -40,14 +44,15 @@ public abstract class Object: MonoBehaviour{
     {
         SetData();
     }
-
-    private void SetData()
+    public void SetData()
     {
         bodySkin.GetComponent<SkinnedMeshRenderer>().material= data.bodyMaterial;
         panSkin.GetComponent<SkinnedMeshRenderer>().material = data.pansMaterial;
-        weaponSkin.GetComponent<MeshFilter>().mesh = data.weapon.GetComponent<MeshFilter>().sharedMesh;
-        weaponSkin.GetComponent<MeshRenderer>().materials = data.weapon.GetComponent<MeshRenderer>().sharedMaterials;
-
+        weaponSkin.GetComponent<MeshFilter>().mesh = data.meshWeapon;
+        weaponSkin.GetComponent<MeshRenderer>().materials = data.materials;
+        playerHat.GetComponent<SetDisplayItem>().SetActive(data.idHat);
+        playerShiled.GetComponent<SetDisplayItem>().SetActive(data.idShield);
+        playerBack.GetComponent<SetDisplayItem>().SetActive(data.idBack);
         level = data.level;
 
         body.transform.localScale = new Vector3(1, 1,1);
@@ -55,11 +60,7 @@ public abstract class Object: MonoBehaviour{
         nameObject = name;
 
         SetupUI?.Invoke(data.name, data.mainCoLor);
-        
-        
-
     }
-
     public virtual void AddLevel(int lv)
     {
         this.level += lv;
@@ -67,14 +68,10 @@ public abstract class Object: MonoBehaviour{
         
         EffectLevelUp();
     }
-
     public virtual void EffectLevelUp()
     {
         
     }
-
-
-
     private void LevelUp()
     {
         if(level <2)
@@ -93,12 +90,7 @@ public abstract class Object: MonoBehaviour{
         {
             body.transform.localScale = Vector3.one * 1.3f;
         }
-            //body.transform.localScale = body.transform.localScale * 1.1f;
         ActionLevelUp.Invoke(level);
-        
-        
-        //SetLevelEvent.setPositonUI?.Invoke(1.5f);
-        //SetLevelEvent.setUIScore?.Invoke(level);
     }
 }
      

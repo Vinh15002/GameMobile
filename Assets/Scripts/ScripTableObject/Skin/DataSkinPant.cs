@@ -6,5 +6,9 @@ using UnityEngine;
 public class DataSkinPant : DataSkin
 {
     public Material[] materials;
+
+
+
+    
 }
 
